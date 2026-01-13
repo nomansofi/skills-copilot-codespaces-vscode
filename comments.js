@@ -15,3 +15,22 @@ server.listen(port, (err) => {
     console.log(`Server is listening on port ${port}`);
 }); 
 // To run the server, use the command: node <filename>.js
+
+function skillsMember()
+{
+    var skills = [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Git",
+        "RESTful APIs",
+        "TypeScript"
+    ];
+
+    return skills;
+}           
+module.exports = skillsMember;
