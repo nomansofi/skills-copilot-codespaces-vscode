@@ -1,36 +1,11 @@
-// create web server
 const http = require('http');
-const port = 3000;
 
-const requestHandler = (request, response) => {
-    response.end('Hello, World!');
-};
+// Create web server
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Comments server is running.\n');
+});
 
-const server = http.createServer(requestHandler);
-
-server.listen(port, (err) => {
-    if (err) {
-        return console.log('Error occurred:', err);
-    }
-    console.log(`Server is listening on port ${port}`);
-}); 
-// To run the server, use the command: node <filename>.js
-
-function skillsMember()
-{
-    var skills = [
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "React",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Git",
-        "RESTful APIs",
-        "TypeScript"
-    ];
-
-    return skills;
-}           
-module.exports = skillsMember;
+server.listen(3000, () => {
+    console.log('Server listening on port 3000');
+});
